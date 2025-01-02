@@ -1,4 +1,5 @@
 // Api Meteo 
+
 let api_key = 'f781d969fc0abdae456c5f7227c3772f'
 
 function changerVille(ville) {
@@ -6,7 +7,7 @@ function changerVille(ville) {
     const baseUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric`;
     let url = baseUrl + "&q=" + ville + "&appid=" + api_key;
     
-    let requete = new XMLHttpRequest();
+    let requete = new XMLHttpRequest();  // requete AJAX
     requete.open('GET', url);
     requete.responseType = 'json';
     requete.send();
@@ -22,12 +23,12 @@ function changerVille(ville) {
     }
 }
 
-changerVille("Paris");
+changerVille("Paris");  // par defaut
 
 let btn = document.querySelector("#changer");
 
 btn.addEventListener("click", () => {
-   let ville = prompt("Quel est la ville choisie ?");
+   let ville = prompt("Quel est la ville choisie ?");  
    changerVille(ville);
 })
 
